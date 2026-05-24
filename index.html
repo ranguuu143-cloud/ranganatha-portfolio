@@ -206,7 +206,6 @@ footer{padding:2rem 3rem;border-top:0.5px solid rgba(255,255,255,0.05);display:f
     <div class="hero-tag"><span></span>Available for Internships & Opportunities</div>
     <h1>
       <span class="line1">Ranganatha M</span>
-      <span class="line2 typing-wrapper"><span id="typed-text"></span><span class="cursor-blink">|</span></span>
     </h1>
     <p class="hero-desc">
       <strong>Passionate Information Science student</strong> focused on AI, Full Stack Development, and Cybersecurity.
@@ -501,17 +500,6 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 
-// Typing effect
-const phrases=['Full Stack Developer','AI Enthusiast','Cybersecurity Learner','Problem Solver'];
-let pi=0,ci=0,del=false;
-const typed=document.getElementById('typed-text');
-function type(){
-  const cur=phrases[pi];
-  if(!del){typed.textContent=cur.slice(0,++ci);if(ci===cur.length){del=true;setTimeout(type,1800);return}}
-  else{typed.textContent=cur.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length}}
-  setTimeout(type,del?60:110);
-}
-setTimeout(type,800);
 
 // Particle canvas
 const canvas=document.getElementById('particles');
